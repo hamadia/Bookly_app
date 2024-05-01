@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/styles.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({super.key});
+  const BookRating(
+      {this.mainAxisAlignment = MainAxisAlignment.start, super.key});
+
+  final MainAxisAlignment mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment,
       children: [
         const Icon(
           Icons.star_rate_rounded,
@@ -24,7 +28,7 @@ class BookRating extends StatelessWidget {
           width: 5,
         ),
         Text(
-          '245',
+          '(245)',
           style: Styles.textStyle14N.copyWith(
             color: const Color(0xFF707070),
           ),
