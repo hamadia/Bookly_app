@@ -27,7 +27,6 @@ class AccessInfo {
     accessViewStatus = json['accessViewStatus'];
     quoteSharingAllowed = json['quoteSharingAllowed'];
   }
-
   String? country;
   String? viewability;
   bool? embeddable;
@@ -42,7 +41,7 @@ class AccessInfo {
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['country'] = country;
-    map['viewability'] = viewability;
+    map['viewAbility'] = viewability;
     map['embeddable'] = embeddable;
     map['publicDomain'] = publicDomain;
     map['textToSpeechPermission'] = textToSpeechPermission;

@@ -8,7 +8,6 @@ class RetailPrice {
     amountInMicros = json['amountInMicros'];
     currencyCode = json['currencyCode'];
   }
-
   int? amountInMicros;
   String? currencyCode;
 

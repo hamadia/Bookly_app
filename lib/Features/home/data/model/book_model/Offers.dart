@@ -1,3 +1,4 @@
+import 'ListPrice.dart';
 import 'RetailPrice.dart';
 
 class Offers {

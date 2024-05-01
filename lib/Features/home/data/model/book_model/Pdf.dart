@@ -6,7 +6,6 @@ class Pdf {
   Pdf.fromJson(dynamic json) {
     isAvailable = json['isAvailable'];
   }
-
   bool? isAvailable;
 
   Map<String, dynamic> toJson() {
@@ -14,4 +13,5 @@ class Pdf {
     map['isAvailable'] = isAvailable;
     return map;
   }
+
 }

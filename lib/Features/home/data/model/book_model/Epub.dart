@@ -6,7 +6,6 @@ class Epub {
   Epub.fromJson(dynamic json) {
     isAvailable = json['isAvailable'];
   }
-
   bool? isAvailable;
 
   Map<String, dynamic> toJson() {
