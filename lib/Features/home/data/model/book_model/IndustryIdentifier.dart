@@ -1,21 +1,21 @@
-class IndustryIdentifier {
-  final String? type;
-  final String? identifier;
+class IndustryIdentifiers {
+  IndustryIdentifiers({
+    this.type,
+    this.identifier,
+  });
 
-  const IndustryIdentifier({this.type, this.identifier});
-
-  factory IndustryIdentifier.fromJson(Map<String, dynamic> json) {
-    return IndustryIdentifier(
-      type: json['type'] as String?,
-      identifier: json['identifier'] as String?,
-    );
+  IndustryIdentifiers.fromJson(dynamic json) {
+    type = json['type'];
+    identifier = json['identifier'];
   }
 
-  Map<String, dynamic> toJson() => {
-        'type': type,
-        'identifier': identifier,
-      };
+  String? type;
+  String? identifier;
 
-  @override
-  List<Object?> get props => [type, identifier];
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['type'] = type;
+    map['identifier'] = identifier;
+    return map;
+  }
 }

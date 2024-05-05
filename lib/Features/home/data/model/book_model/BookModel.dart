@@ -1,9 +1,11 @@
+import 'package:bookly/Features/home/domain/entities/book_entity.dart';
+
 import 'AccessInfo.dart';
 import 'SaleInfo.dart';
 import 'SearchInfo.dart';
 import 'VolumeInfo.dart';
 
-class BookModel {
+class BookModel extends BookEntity {
   BookModel({
     this.kind,
     this.id,
@@ -13,9 +15,30 @@ class BookModel {
     this.saleInfo,
     this.accessInfo,
     this.searchInfo,
-  });
+    required String image,
+    required String bookId,
+    required String title,
+    required String authorName,
+    required num price,
+    required String rating,
+  }) : super(
+          image: volumeInfo!.imageLinks?.thumbnail ?? '',
+          bookId: id ?? '',
+          title: volumeInfo.title ?? '',
+          authorName: volumeInfo.authors?.first ?? 'No Name',
+          price: 0.0,
+          rating: volumeInfo.maturityRating ?? '',
+        );
 
-  BookModel.fromJson(dynamic json) {
+  BookModel.fromJson(dynamic json)
+      : super(
+          image: json['image'],
+          bookId: json['bookId'],
+          title: json['title'],
+          authorName: json['authorName'],
+          price: json['price'],
+          rating: json['rating'],
+        ) {
     kind = json['kind'];
     id = json['id'];
     etag = json['etag'];

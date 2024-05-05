@@ -1,19 +1,21 @@
 class ImageLinks {
-  final String smallThumbnail;
-  final String thumbnail;
+  ImageLinks({
+    this.smallThumbnail,
+    this.thumbnail,
+  });
 
-  const ImageLinks({required this.smallThumbnail, required this.thumbnail});
+  ImageLinks.fromJson(dynamic json) {
+    smallThumbnail = json['smallThumbnail'];
+    thumbnail = json['thumbnail'];
+  }
 
-  factory ImageLinks.fromJson(Map<String, dynamic> json) => ImageLinks(
-        smallThumbnail: json['smallThumbnail'] as String,
-        thumbnail: json['thumbnail'] as String,
-      );
+  String? smallThumbnail;
+  String? thumbnail;
 
-  Map<String, dynamic> toJson() => {
-        'smallThumbnail': smallThumbnail,
-        'thumbnail': thumbnail,
-      };
-
-  @override
-  List<Object?> get props => [smallThumbnail, thumbnail];
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['smallThumbnail'] = smallThumbnail;
+    map['thumbnail'] = thumbnail;
+    return map;
+  }
 }
