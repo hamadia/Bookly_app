@@ -19,10 +19,12 @@ class FeaturedBooksListView extends StatelessWidget {
     scrollController.addListener(() {
       final double maxHeight = MediaQuery.of(context).size.height * 0.3;
       final double currentHeight = scrollController.position.maxScrollExtent;
+      var nextPage = 1;
       // Calculate when the scroll view reaches 70% of its length
       if (currentHeight >= maxHeight * 0.7) {
         // Trigger the function to fetch featured books
-        BlocProvider.of<FeaturedBooksCubit>(context).fetchFeaturedBooks();
+        BlocProvider.of<FeaturedBooksCubit>(context)
+            .fetchFeaturedBooks(pageNumber: nextPage++);
       }
     });
 

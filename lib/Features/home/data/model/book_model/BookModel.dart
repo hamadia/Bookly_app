@@ -29,7 +29,6 @@ class BookModel extends BookEntity {
           price: 0.0,
           rating: volumeInfo.maturityRating ?? '',
         );
-
   BookModel.fromJson(dynamic json)
       : super(
           image: json['image'],
